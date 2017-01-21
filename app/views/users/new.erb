@@ -1,0 +1,20 @@
+<h2>Registration Form</h2>
+
+<div class="errors">
+<% messages = @user.errors.full_messages %>
+<%if messages.length > 0 %>
+  <% messages.each do |message| %>
+  <ul>
+  <li>  <%= message %> </li>
+  </ul>
+    <% end %>
+<% end %>
+</div>
+
+<form method="POST" action="/users">
+<input type="text" placeholder="First name" name="user[first_name]"> <br>
+<input type="text" placeholder="Last name" name="user[last_name]"> <br>
+<input type="text" placeholder="Username" name="user[username]"><br>
+<input type="password" placeholder="Password" name="user[password]"> <br>
+<input type="submit">
+</form>
